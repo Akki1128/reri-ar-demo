@@ -22,16 +22,17 @@
       renderer="logarithmicDepthBuffer: true;"
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
-      <!-- Attach everything to the HIRO marker -->
       <a-marker preset="hiro">
 
-        <!-- 0) Section labels so professor knows what is what -->
+        <!-- Section labels (bigger / lower / closer to center) -->
         <a-text
           value="RERI tiers"
           align="center"
           color="#FFFFFF"
           width="1.6"
-          position="-0.35 1.05 0.01"
+          side="double"
+          position="-0.35 0.95 0.01"
+          scale="1.2 1.2 1"
         ></a-text>
 
         <a-text
@@ -39,39 +40,42 @@
           align="center"
           color="#FFFFFF"
           width="2.2"
-          position="0 1.25 0.01"
+          side="double"
+          position="0 1.05 0.01"
+          scale="1.2 1.2 1"
         ></a-text>
 
         <a-text
           value="Tuned models"
           align="center"
           color="#FFFFFF"
-          width="1.8"
-          position="0.35 1.15 0.01"
+          width="1.6"
+          side="double"
+          position="0.35 0.95 0.01"
+          scale="1.2 1.2 1"
         ></a-text>
 
-        <!-- 1) Globe = dataset + indicators (center) -->
+        <!-- Globe = dataset + indicators (center) -->
         <a-sphere
-          position="0 0.7 0"
+          position="0 0.6 0"
           radius="0.35"
           color="#4FC3F7"
           animation="property: rotation; to: 0 360 0; loop: true; dur: 12000; easing: linear"
         ></a-sphere>
 
-        <!-- Indicator “dots” around globe -->
-        <a-sphere position="0.55 0.7 0"   radius="0.06" color="#FFD54F"></a-sphere>
-        <a-sphere position="-0.55 0.7 0"  radius="0.06" color="#81C784"></a-sphere>
-        <a-sphere position="0 0.7 0.55"   radius="0.06" color="#FF8A65"></a-sphere>
-        <a-sphere position="0 0.7 -0.55"  radius="0.06" color="#CE93D8"></a-sphere>
-        <a-sphere position="0 1.05 0"     radius="0.06" color="#90A4AE"></a-sphere>
+        <!-- Indicator dots -->
+        <a-sphere position="0.55 0.6 0"   radius="0.06" color="#FFD54F"></a-sphere>
+        <a-sphere position="-0.55 0.6 0"  radius="0.06" color="#81C784"></a-sphere>
+        <a-sphere position="0 0.6 0.55"   radius="0.06" color="#FF8A65"></a-sphere>
+        <a-sphere position="0 0.6 -0.55"  radius="0.06" color="#CE93D8"></a-sphere>
+        <a-sphere position="0 0.95 0"     radius="0.06" color="#90A4AE"></a-sphere>
 
-        <!-- 2) RERI tiers (left, closer to center) -->
-
+        <!-- RERI tiers (left, compact) -->
         <!-- Low -->
         <a-box
-          position="-0.35 0.18 0"
+          position="-0.35 0.14 0"
           width="0.45"
-          height="0.16"
+          height="0.14"
           depth="0.45"
           color="#E57373"
         ></a-box>
@@ -80,14 +84,16 @@
           align="center"
           color="#FFFFFF"
           width="1.4"
-          position="-0.35 0.34 0.01"
+          side="double"
+          position="-0.35 0.28 0.01"
+          scale="1.1 1.1 1"
         ></a-text>
 
         <!-- Medium -->
         <a-box
-          position="-0.35 0.38 0"
+          position="-0.35 0.33 0"
           width="0.33"
-          height="0.16"
+          height="0.14"
           depth="0.33"
           color="#FFEE58"
         ></a-box>
@@ -96,14 +102,16 @@
           align="center"
           color="#000000"
           width="1.4"
-          position="-0.35 0.54 0.01"
+          side="double"
+          position="-0.35 0.47 0.01"
+          scale="1.1 1.1 1"
         ></a-text>
 
         <!-- High -->
         <a-box
-          position="-0.35 0.58 0"
+          position="-0.35 0.52 0"
           width="0.23"
-          height="0.16"
+          height="0.14"
           depth="0.23"
           color="#81C784"
         ></a-box>
@@ -112,12 +120,14 @@
           align="center"
           color="#000000"
           width="1.4"
-          position="-0.35 0.74 0.01"
+          side="double"
+          position="-0.35 0.66 0.01"
+          scale="1.1 1.1 1"
         ></a-text>
 
-        <!-- 3) Accuracy panel (right, pulled very close to center) -->
+        <!-- Accuracy panel (right, very close to center) -->
         <a-plane
-          position="0.35 0.7 0"
+          position="0.35 0.6 0"
           width="0.9"
           height="0.7"
           color="#263238"
@@ -130,7 +140,9 @@
           align="center"
           color="#FFFFFF"
           width="1.6"
-          position="0.35 1.00 0.01"
+          side="double"
+          position="0.35 0.88 0.01"
+          scale="1.05 1.05 1"
         ></a-text>
 
         <a-text
@@ -138,7 +150,8 @@
           align="center"
           color="#FFFFFF"
           width="1.6"
-          position="0.35 0.88 0.01"
+          side="double"
+          position="0.35 0.78 0.01"
         ></a-text>
 
         <a-text
@@ -146,7 +159,8 @@
           align="center"
           color="#FFFFFF"
           width="1.6"
-          position="0.35 0.78 0.01"
+          side="double"
+          position="0.35 0.70 0.01"
         ></a-text>
 
         <a-text
@@ -154,7 +168,8 @@
           align="center"
           color="#FFFFFF"
           width="1.6"
-          position="0.35 0.68 0.01"
+          side="double"
+          position="0.35 0.62 0.01"
         ></a-text>
 
         <a-text
@@ -162,7 +177,8 @@
           align="center"
           color="#FFFFFF"
           width="1.6"
-          position="0.35 0.58 0.01"
+          side="double"
+          position="0.35 0.54 0.01"
         ></a-text>
 
         <a-text
@@ -170,7 +186,8 @@
           align="center"
           color="#B0BEC5"
           width="1.6"
-          position="0.35 0.46 0.01"
+          side="double"
+          position="0.35 0.44 0.01"
         ></a-text>
 
       </a-marker>
