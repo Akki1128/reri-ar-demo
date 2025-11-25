@@ -7,7 +7,7 @@
     <!-- A-Frame -->
     <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
 
-    <!-- AR.js for A-Frame (stable build) -->
+    <!-- AR.js -->
     <script src="https://cdn.jsdelivr.net/npm/@ar-js-org/ar.js@3.4.4/aframe/build/aframe-ar.min.js"></script>
 
     <style>
@@ -22,160 +22,76 @@
       renderer="logarithmicDepthBuffer: true;"
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
-      <!-- Attach everything to the HIRO marker -->
+
       <a-marker preset="hiro">
 
-        <!-- 0) Section labels so professor knows what is what -->
-        <a-text
-          value="RERI tiers"
-          align="center"
-          color="#FFFFFF"
-          width="1.6"
-          position="-0.35 1.05 0.01"
-        ></a-text>
+        <!-- LEFT SECTION: RERI TIERS -->
+        <a-entity text="value: RERI tiers; align: center; color: #FFFFFF; width: 1.5;"
+          position="-0.8 1.05 0"></a-entity>
 
-        <a-text
-          value="Countries & indicators"
-          align="center"
-          color="#FFFFFF"
-          width="2.2"
-          position="0 1.25 0.01"
-        ></a-text>
+        <!-- Low -->
+        <a-box position="-0.8 0.35 0" width="0.45" height="0.16" depth="0.45" color="#E57373"></a-box>
+        <a-entity text="value: Low (86); align: center; color: white; width: 1.4;"
+          position="-0.8 0.50 0.01"></a-entity>
 
-        <a-text
-          value="Tuned models"
-          align="center"
-          color="#FFFFFF"
-          width="1.8"
-          position="0.35 1.15 0.01"
-        ></a-text>
+        <!-- Medium -->
+        <a-box position="-0.8 0.55 0" width="0.33" height="0.16" depth="0.33" color="#FFEE58"></a-box>
+        <a-entity text="value: Medium (86); align: center; color: black; width: 1.4;"
+          position="-0.8 0.70 0.01"></a-entity>
 
-        <!-- 1) Globe = dataset + indicators (center) -->
+        <!-- High -->
+        <a-box position="-0.8 0.75 0" width="0.23" height="0.16" depth="0.23" color="#81C784"></a-box>
+        <a-entity text="value: High (87); align: center; color: black; width: 1.4;"
+          position="-0.8 0.90 0.01"></a-entity>
+
+
+
+        <!-- CENTER SECTION: GLOBE + INDICATORS -->
+        <a-entity text="value: Countries & indicators; align: center; color: #FFFFFF; width: 1.8;"
+          position="0 1.15 0.01"></a-entity>
+
         <a-sphere
-          position="0 0.7 0"
+          position="0 0.75 0"
           radius="0.35"
           color="#4FC3F7"
           animation="property: rotation; to: 0 360 0; loop: true; dur: 12000; easing: linear"
         ></a-sphere>
 
-        <!-- Indicator “dots” around globe -->
-        <a-sphere position="0.55 0.7 0"   radius="0.06" color="#FFD54F"></a-sphere>
-        <a-sphere position="-0.55 0.7 0"  radius="0.06" color="#81C784"></a-sphere>
-        <a-sphere position="0 0.7 0.55"   radius="0.06" color="#FF8A65"></a-sphere>
-        <a-sphere position="0 0.7 -0.55"  radius="0.06" color="#CE93D8"></a-sphere>
-        <a-sphere position="0 1.05 0"     radius="0.06" color="#90A4AE"></a-sphere>
+        <!-- Indicator dots -->
+        <a-sphere position="0.55 0.75 0" radius="0.06" color="#FFD54F"></a-sphere>
+        <a-sphere position="-0.55 0.75 0" radius="0.06" color="#81C784"></a-sphere>
+        <a-sphere position="0 0.75 0.55" radius="0.06" color="#FF8A65"></a-sphere>
+        <a-sphere position="0 0.75 -0.55" radius="0.06" color="#CE93D8"></a-sphere>
+        <a-sphere position="0 1.15 0" radius="0.06" color="#90A4AE"></a-sphere>
 
-        <!-- 2) RERI tiers (left, closer to center) -->
 
-        <!-- Low -->
-        <a-box
-          position="-0.35 0.18 0"
-          width="0.45"
-          height="0.16"
-          depth="0.45"
-          color="#E57373"
-        ></a-box>
-        <a-text
-          value="Low (86)"
-          align="center"
-          color="#FFFFFF"
-          width="1.4"
-          position="-0.35 0.34 0.01"
-        ></a-text>
 
-        <!-- Medium -->
-        <a-box
-          position="-0.35 0.38 0"
-          width="0.33"
-          height="0.16"
-          depth="0.33"
-          color="#FFEE58"
-        ></a-box>
-        <a-text
-          value="Medium (86)"
-          align="center"
-          color="#000000"
-          width="1.4"
-          position="-0.35 0.54 0.01"
-        ></a-text>
+        <!-- RIGHT SECTION: TUNED MODELS PANEL -->
+        <a-entity text="value: Tuned models; align: center; color: #FFFFFF; width: 1.5;"
+          position="0.8 1.05 0.01"></a-entity>
 
-        <!-- High -->
-        <a-box
-          position="-0.35 0.58 0"
-          width="0.23"
-          height="0.16"
-          depth="0.23"
-          color="#81C784"
-        ></a-box>
-        <a-text
-          value="High (87)"
-          align="center"
-          color="#000000"
-          width="1.4"
-          position="-0.35 0.74 0.01"
-        ></a-text>
+        <a-plane position="0.8 0.70 0" width="1.1" height="0.85" color="#263238" opacity="0.9"></a-plane>
 
-        <!-- 3) Accuracy panel (right, pulled very close to center) -->
-        <a-plane
-          position="0.35 0.7 0"
-          width="0.9"
-          height="0.7"
-          color="#263238"
-          opacity="0.85"
-          radius="0.05"
-        ></a-plane>
+        <a-entity text="value: LogReg: 96.9%; align: center; color: white; width: 1.4;"
+          position="0.8 0.92 0.01"></a-entity>
 
-        <a-text
-          value="Model accuracies"
-          align="center"
-          color="#FFFFFF"
-          width="1.6"
-          position="0.35 1.00 0.01"
-        ></a-text>
+        <a-entity text="value: Linear SVM: 93.8%; align: center; color: white; width: 1.4;"
+          position="0.8 0.82 0.01"></a-entity>
 
-        <a-text
-          value="LogReg: 96.9%"
-          align="center"
-          color="#FFFFFF"
-          width="1.6"
-          position="0.35 0.88 0.01"
-        ></a-text>
+        <a-entity text="value: RBF SVM: 90.8%; align: center; color: white; width: 1.4;"
+          position="0.8 0.72 0.01"></a-entity>
 
-        <a-text
-          value="Linear SVM: 93.8%"
-          align="center"
-          color="#FFFFFF"
-          width="1.6"
-          position="0.35 0.78 0.01"
-        ></a-text>
+        <a-entity text="value: Decision Tree: 78.5%; align: center; color: white; width: 1.4;"
+          position="0.8 0.62 0.01"></a-entity>
 
-        <a-text
-          value="RBF SVM: 90.8%"
-          align="center"
-          color="#FFFFFF"
-          width="1.6"
-          position="0.35 0.68 0.01"
-        ></a-text>
+        <a-entity text="value: Predicting RERI tiers; align: center; color: #B0BEC5; width: 1.6;"
+          position="0.8 0.51 0.01"></a-entity>
 
-        <a-text
-          value="Decision Tree: 78.5%"
-          align="center"
-          color="#FFFFFF"
-          width="1.6"
-          position="0.35 0.58 0.01"
-        ></a-text>
-
-        <a-text
-          value="Predicting RERI tiers"
-          align="center"
-          color="#B0BEC5"
-          width="1.6"
-          position="0.35 0.46 0.01"
-        ></a-text>
 
       </a-marker>
 
       <a-entity camera></a-entity>
+
     </a-scene>
   </body>
 </html>
